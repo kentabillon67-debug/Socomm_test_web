@@ -139,6 +139,8 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             border: 1px solid #f1f5f9;
             scroll-margin-top: 5rem; /* Prevents sticky navbar from covering titles when scrolling */
+            height: auto;           /* Forces container to fully expand dynamically */
+            overflow: visible;      /* Prevents any internal layout cutoff */
         }
 
         .section-title {
@@ -161,7 +163,7 @@
             border-radius: 2px;
         }
 
-        /* Mass Schedule Layout */
+        /* Mass Schedule Layout Grid */
         .schedule-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -175,6 +177,7 @@
             padding: 1.8rem;
             border-top: 4px solid var(--primary);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            height: auto;           /* Forces sub-cards to expand with content */
         }
 
         .schedule-card:hover {
@@ -197,11 +200,12 @@
         }
 
         .schedule-time span:first-child {
-            color: var(--text-muted);
+            color: var(--text-dark);
+            font-weight: 500;
         }
 
         .schedule-time span:last-child {
-            font-weight: 600;
+            font-weight: 700;
             color: var(--secondary);
         }
 
@@ -338,9 +342,3 @@
     <!-- Main Content Container -->
     <main class="main-content">
         <!-- Mass Schedule Section -->
-        <section id="schedule">
-            <h2 class="section-title">Mass Schedules</h2>
-            <div class="schedule-grid">
-                <div class="schedule-card">
-                    <h3>Sunday Liturgies</h3>
-                    <div class="schedule-time"><span>Early Morning (Bikol)</span><span>5:00 AM</span></div>
