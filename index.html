@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoComm Ministry - Parish Website</title>
+    <title>SOCOMM Bombon | Official Parish Website</title>
+    <!-- Modern Font Integration -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1a365d;
-            --secondary-color: #2b6cb0;
-            --accent-color: #d69e2e;
-            --light-bg: #f7fafc;
-            --text-color: #2d3748;
+            --primary: #1e293b;     /* Elegant Slate Black */
+            --secondary: #0f172a;   /* Deep Charcoal */
+            --accent: #b45309;      /* Warm Amber Gold */
+            --accent-light: #fef3c7;/* Light Gold Accent tint */
+            --bg-main: #f8fafc;     /* Clean Soft White */
+            --bg-card: #ffffff;     /* Pure White for Containers */
+            --text-dark: #334155;   /* Crisp Body Text */
+            --text-muted: #64748b;  /* Subtle Secondary Text */
         }
 
         * {
@@ -20,239 +27,309 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-            background-color: var(--light-bg);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
 
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1.5rem 0;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.3rem;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            color: var(--accent-color);
-        }
-
+        /* Top Bar Navigation */
         nav {
-            background-color: var(--secondary-color);
-            display: flex;
-            justify-content: center;
-            padding: 0.8rem;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
         }
 
-        nav a {
-            color: white;
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--primary);
             text-decoration: none;
-            padding: 0.5rem 1.2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero / Introduction Banner */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            padding: 6rem 5% 7rem 5%;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
             font-weight: 600;
-            transition: color 0.2s;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
         }
 
-        nav a:hover {
-            color: var(--accent-color);
+        .hero .parish-name {
+            font-size: 1.3rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto;
+            color: #cbd5e1;
+            font-weight: 300;
+        }
+
+        /* Content Layout Framework */
+        .main-content {
+            max-width: 1100px;
+            margin: -3rem auto 4rem auto;
             padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
         }
 
+        /* Sections and Card Designs */
         section {
-            background: white;
-            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 3rem 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid #f1f5f9;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--secondary);
             margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: relative;
+            display: inline-block;
         }
 
-        h2 {
-            color: var(--primary-color);
-            margin-bottom: 1.2rem;
-            font-size: 1.6rem;
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.4rem;
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+            border-radius: 2px;
         }
 
-        /* Mass Schedule Grid */
+        /* Mass Schedule Layout */
         .schedule-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
         .schedule-card {
-            background: var(--light-bg);
-            padding: 1.2rem;
-            border-left: 4px solid var(--secondary-color);
-            border-radius: 4px;
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 1.8rem;
+            border-top: 4px solid var(--accent);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .schedule-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
         }
 
         .schedule-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
 
-        /* Priest Section */
-        .priest-profile {
+        .schedule-time {
             display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
         }
 
-        .priest-img {
-            width: 150px;
-            height: 150px;
-            background-color: #cbd5e0;
+        .schedule-time span:first-child {
+            color: var(--text-muted);
+        }
+
+        .schedule-time span:last-child {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .live-badge {
+            background-color: #ef4444;
+            color: white;
+            font-size: 0.75rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+
+        /* Calendar Section */
+        .no-events {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-style: italic;
+            background: #f8fafc;
+            border-radius: 12px;
+            border: 1px dashed #cbd5e1;
+        }
+
+        /* Leadership / Priest Layout */
+        .priest-card {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .priest-avatar {
+            width: 130px;
+            height: 130px;
+            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            border: 4px solid var(--bg-main);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .priest-meta h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--secondary);
+            margin-bottom: 0.2rem;
+        }
+
+        .priest-role {
+            color: var(--accent);
+            font-weight: 600;
             font-size: 0.9rem;
-            color: #718096;
-            text-align: center;
-            flex-shrink: 0;
-            border: 3px solid var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
         }
 
-        .priest-info h3 {
-            color: var(--primary-color);
-            font-size: 1.3rem;
+        .priest-quote {
+            font-style: italic;
+            color: var(--text-muted);
+            border-left: 3px solid #e2e8f0;
+            padding-left: 1rem;
+            max-width: 600px;
         }
 
-        .priest-info p {
-            margin-top: 0.3rem;
-        }
-
-        /* Calendar List */
-        .calendar-list {
-            list-style: none;
-        }
-
-        .calendar-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .calendar-item:last-child {
-            border-bottom: none;
-        }
-
-        .event-date {
-            font-weight: bold;
-            color: var(--secondary-color);
-        }
-
+        /* Footer */
         footer {
+            background-color: var(--secondary);
+            color: #94a3b8;
             text-align: center;
-            padding: 1.5rem;
-            background-color: var(--primary-color);
-            color: white;
+            padding: 3rem 1.5rem;
             font-size: 0.9rem;
-            margin-top: 3rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            .nav-links {
+                gap: 1.2rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .priest-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            .priest-quote {
+                border-left: none;
+                padding-left: 0;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>SoComm Ministry</h1>
-        <p>Social Communications & Parish Media</p>
-    </header>
-
+    <!-- Premium Navigation Bar -->
     <nav>
-        <!-- Link back to your existing main index page -->
-        <a href="index.html">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#mass-schedule">Mass Schedule</a>
-        <a href="#calendar">Calendar</a>
-        <a href="#priest">Parish Priest</a>
+        <a href="#" class="nav-logo">SOCOMM Bombon<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="#schedule">Mass Times</a></li>
+            <li><a href="#calendar">Calendar</a></li>
+            <li><a href="#priest">Our Priest</a></li>
+        </ul>
     </nav>
 
-    <div class="container">
-        
-        <!-- About Section -->
-        <section id="about">
-            <h2>Welcome to Our Ministry</h2>
-            <p>The Social Communications (SoComm) Ministry is dedicated to evangelization through modern media, live-streaming holy masses, capturing community milestones, and keeping our parish family informed and connected.</p>
-        </section>
+    <!-- Hero Introduction -->
+    <header class="hero">
+        <h1>SOCOMM Bombon</h1>
+        <div class="parish-name">Our Lady of the Holy Rosary Parish</div>
+        <p>Connecting the faithful of Bombon, Camarines Sur through digital fellowship, high-quality livestreaming, and community media archiving.</p>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
 
         <!-- Mass Schedule Section -->
-        <section id="mass-schedule">
-            <h2>Mass Schedules</h2>
+        <section id="schedule">
+            <h2 class="section-title">Mass Schedules</h2>
             <div class="schedule-grid">
                 <div class="schedule-card">
-                    <h3>Sunday Masses</h3>
-                    <p><strong>Morning:</strong> 6:00 AM, 8:00 AM</p>
-                    <p><strong>Evening:</strong> 5:00 PM</p>
-                </div>
-                <div class="schedule-card">
-                    <h3>Weekday Masses</h3>
-                    <p><strong>Monday - Friday:</strong> 6:00 AM & 6:00 PM</p>
-                </div>
-                <div class="schedule-card">
-                    <h3>First Friday Devotion</h3>
-                    <p><strong>Mass & Holy Hour:</strong> 5:30 PM</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Parish Calendar Section -->
-        <section id="calendar">
-            <h2>Upcoming Parish Activities</h2>
-            <ul class="calendar-list">
-                <li class="calendar-item">
-                    <span>Ministry Lenten Recollection</span>
-                    <span class="event-date">March 20, 2026</span>
-                </li>
-                <li class="calendar-item">
-                    <span>SoComm Live-Streaming Training</span>
-                    <span class="event-date">April 05, 2026</span>
-                </li>
-                <li class="calendar-item">
-                    <span>Parish Fiesta Celebration</span>
-                    <span class="event-date">May 15, 2026</span>
-                </li>
-            </ul>
-        </section>
-
-        <!-- Parish Priest Section -->
-        <section id="priest">
-            <h2>Parish Leadership</h2>
-            <div class="priest-profile">
-                <div class="priest-img">
-                    [Photo Placeholder]
-                </div>
-                <div class="priest-info">
-                    <h3>Rev. Fr. [Insert Priest Name]</h3>
-                    <p><strong>Parish Priest</strong></p>
-                    <p><em>"Using communication as a tool to build communion and share God's word with everyone."</em></p>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 SoComm Ministry. All Rights Reserved.</p>
-    </footer>
-
-</body>
-</html>
+                    <h3>Sunday Liturgies</h3>
+                    <div class="schedule-time"><span>Early Morning (Bikol)</span><span>5:00 AM</span></div>
+                    <div class="schedule-time"><span>Morning Mass (English)</span><span>7:30 AM <span class="live-badge">FB LIVE</span></span></div>
