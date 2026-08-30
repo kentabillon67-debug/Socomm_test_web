@@ -20,6 +20,11 @@
             --text-muted: #64748b;  /* Subtle Secondary Text */
         }
 
+        /* Enable Smooth Scrolling Behavior when clicking navbar items */
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -95,7 +100,7 @@
         .hero {
             background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
             color: white;
-            padding: 6rem 5% 7rem 5%;
+            padding: 6rem 5% 8rem 5%;
             text-align: center;
             position: relative;
         }
@@ -128,7 +133,7 @@
         /* Content Layout Framework */
         .main-content {
             max-width: 1100px;
-            margin: -3rem auto 4rem auto;
+            margin: -4rem auto 4rem auto;
             padding: 0 1.5rem;
             position: relative;
             z-index: 10;
@@ -142,6 +147,7 @@
             margin-bottom: 2.5rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             border: 1px solid #f1f5f9;
+            scroll-margin-top: 5rem; /* Prevents sticky navbar from covering titles when scrolling */
         }
 
         .section-title {
@@ -169,6 +175,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
+            width: 100%;
         }
 
         .schedule-card {
@@ -227,6 +234,7 @@
             background: #f8fafc;
             border-radius: 12px;
             border: 1px dashed #cbd5e1;
+            width: 100%;
         }
 
         /* Leadership / Priest Layout */
@@ -320,7 +328,6 @@
     <!-- Premium Navigation Bar -->
     <nav>
         <a href="#" class="logo-container">
-            <!-- Your logo file loaded side-by-side with the name -->
             <img src="logo.jfif" alt="SOCOMM Logo" class="brand-logo-img">
             <div class="nav-logo">SOCOMM Bombon</div>
         </a>
@@ -339,9 +346,3 @@
     </header>
 
     <!-- Main Content Container -->
-    <main class="main-content">
-
-        <!-- Mass Schedule Section -->
-        <section id="schedule">
-            <h2 class="section-title">Mass Schedules</h2>
-            <div class="schedule-grid">
