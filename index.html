@@ -10,8 +10,8 @@
     <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1e293b;     /* Elegant Slate Black */
-            --secondary: #0f172a;   /* Deep Charcoal */
+            --primary: #254b9c;     /* Matched Logo Royal Blue */
+            --secondary: #17326c;   /* Deep Navy */
             --accent: #b45309;      /* Warm Amber Gold */
             --accent-light: #fef3c7;/* Light Gold Accent tint */
             --bg-main: #f8fafc;     /* Clean Soft White */
@@ -45,7 +45,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 5%;
+            padding: 0.8rem 5%;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .brand-logo-img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
         }
 
         .nav-logo {
@@ -53,7 +66,6 @@
             font-weight: 700;
             font-size: 1.4rem;
             color: var(--primary);
-            text-decoration: none;
             letter-spacing: -0.5px;
         }
 
@@ -76,7 +88,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--accent);
+            color: var(--primary);
         }
 
         /* Hero / Introduction Banner */
@@ -98,7 +110,7 @@
 
         .hero .parish-name {
             font-size: 1.3rem;
-            color: var(--accent);
+            color: #93c5fd;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 600;
@@ -148,7 +160,7 @@
             left: 0;
             width: 40px;
             height: 3px;
-            background-color: var(--accent);
+            background-color: var(--primary);
             border-radius: 2px;
         }
 
@@ -163,7 +175,7 @@
             background: #f8fafc;
             border-radius: 12px;
             padding: 1.8rem;
-            border-top: 4px solid var(--accent);
+            border-top: 4px solid var(--primary);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
@@ -248,7 +260,7 @@
         }
 
         .priest-role {
-            color: var(--accent);
+            color: var(--primary);
             font-weight: 600;
             font-size: 0.9rem;
             text-transform: uppercase;
@@ -307,7 +319,11 @@
 
     <!-- Premium Navigation Bar -->
     <nav>
-        <a href="#" class="nav-logo">SOCOMM Bombon<span>.</span></a>
+        <a href="#" class="logo-container">
+            <!-- Your logo file loaded side-by-side with the name -->
+            <img src="logo.jfif" alt="SOCOMM Logo" class="brand-logo-img">
+            <div class="nav-logo">SOCOMM Bombon</div>
+        </a>
         <ul class="nav-links">
             <li><a href="#schedule">Mass Times</a></li>
             <li><a href="#calendar">Calendar</a></li>
@@ -329,7 +345,3 @@
         <section id="schedule">
             <h2 class="section-title">Mass Schedules</h2>
             <div class="schedule-grid">
-                <div class="schedule-card">
-                    <h3>Sunday Liturgies</h3>
-                    <div class="schedule-time"><span>Early Morning (Bikol)</span><span>5:00 AM</span></div>
-                    <div class="schedule-time"><span>Morning Mass (English)</span><span>7:30 AM <span class="live-badge">FB LIVE</span></span></div>
